@@ -36,4 +36,6 @@ This is a Tic-Tac-Toe game in Python that runs on Terminal. It allows the player
 ---
 
 ## What Changed
-*(This section will be updated at the conclusion of the project with any deviations from this original plan.)*
+- **Implementation Alignment:** The final implementation strictly followed the modular architecture outlined in the plan, separating concerns across `board.py`, `ai.py`, `game.py`, and `main.py`.
+- **AI Polymorphism:** Utilized Python's `abc` module to establish an abstract `AIPlayer` interface, allowing `EasyAI` and `HardAI` to be swapped seamlessly into the game logic without conditional checking.
+- **Testing Enhancements:** Added comprehensive parameterized `pytest` fixtures and seeded random generators to thoroughly validate edge cases, off-board inputs, win/draw states, and minimax optimality without relying on unseeded randomness or real time.
