@@ -1,6 +1,6 @@
-# Tic-Tac-Toe with AI Opponent — Learning Revision
+# Tic-Tac-Toe with AI Opponent
 
-A terminal-based Python 3 Tic-Tac-Toe game with two-player mode, random Easy AI, and minimax Hard AI. This is a **post-submission learning revision**, not a replacement for the original submission.
+A terminal-based Python 3 Tic-Tac-Toe game with two-player mode, random Easy AI, and minimax Hard AI.
 
 ## Requirements
 
@@ -14,8 +14,7 @@ Create and activate a virtual environment:
 python -m venv .venv
 ```
 
-On Windows PowerShell: `.venv\Scripts\Activate.ps1`  
-On macOS/Linux: `source .venv/bin/activate`
+ `source .venv/bin/activate`
 
 Install dependencies:
 
