@@ -30,7 +30,7 @@ class TicTacToeGame:
         if self.game_over or not self.ai_opponent or self.current_mark != self.ai_mark:
             return False, "Not AI's turn or no AI configured."
 
-        # Polymorphic call: works for EasyAI or HardAI without knowing the subclass[cite: 27, 28]
+        # Polymorphic call: works for EasyAI or HardAI without knowing the subclass
         row, col = self.ai_opponent.choose_move(self.board, self.ai_mark)
         success = self.board.place_mark(row, col, self.ai_mark)
         

@@ -9,14 +9,18 @@ def main():
     print("2. Versus Computer (Easy)")
     print("3. Versus Computer (Hard)")
 
-    mode_choice = input("Enter choice (1, 2, or 3): ").strip()
+    while True:
+        mode_choice = input("Enter choice (1, 2, or 3): ").strip()
+        if mode_choice in ("1", "2", "3"):
+            break
+        print("Invalid choice. Enter 1, 2, or 3.")
     
     ai_opponent = None
     if mode_choice == "2":
         ai_opponent = EasyAI(rng=random.Random())
         print("\nMode selected: Human (X) vs Easy Computer (O)")
     elif mode_choice == "3":
-        ai_opponent = HardAI()
+        ai_opponent = HardAI(rng=random.Random())
         print("\nMode selected: Human (X) vs Hard Computer (O)")
     else:
         print("\nMode selected: Two Players (X vs O)")
@@ -42,7 +46,7 @@ def main():
             print("Invalid input! Please enter two numbers separated by a space (e.g., 2 3). Try again.")
             continue
 
-        # Convert 1-indexed user input to 0-indexed coordinates[cite: 10]
+        # Convert 1-indexed user input to 0-indexed coordinates
         row = int(parts[0]) - 1
         col = int(parts[1]) - 1
 

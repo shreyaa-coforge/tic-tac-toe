@@ -27,8 +27,9 @@ class HardAI(AIPlayer):
     """Uses the minimax algorithm to play perfectly on a 3x3 board."""
 
     def __init__(self, rng=None):
-        # rng parameter accepted for consistency / testing hooks if needed
-        pass
+        # Preserve the supplied generator for a consistent AI interface.
+        # Minimax breaks equal-scoring ties deterministically.
+        self._rng = rng if rng is not None else random.Random()
 
     def choose_move(self, board, mark):
         opponent = "O" if mark == "X" else "X"

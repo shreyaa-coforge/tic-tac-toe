@@ -60,12 +60,6 @@ class Board:
         '''Return True if no empty cells remain.'''
         return len(self.empty_cells()) == 0
 
-    def copy(self):
-        '''Return an independent deep copy of this board for AI simulation.'''
-        clone = Board(self._size)
-        clone._grid = [row[:] for row in self._grid]  # Independent row slicing
-        return clone
-
     def __str__(self):
         separator = "-" * (self._size * 4 - 1)
         lines = []

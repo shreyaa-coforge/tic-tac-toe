@@ -56,3 +56,9 @@ def test_board_draw(board):
     assert board.is_full() is True
     assert board.has_won("X") is False
     assert board.has_won("O") is False
+
+def test_win_other_diagonal(board):
+    for row, col in [(0, 2), (1, 1), (2, 0)]:
+        assert board.place_mark(row, col, "O") is True
+    assert board.has_won("O") is True
+    assert board.has_won("X") is False
