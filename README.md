@@ -1,35 +1,48 @@
-# Tic-Tac-Toe with AI Opponent
+# Tic-Tac-Toe with AI Opponent — Learning Revision
 
-A robust, object-oriented command-line Tic-Tac-Toe game written in Python 3. It supports a two-player mode (Human vs. Human) and a single-player mode against a computer opponent with **Easy** (random) and **Hard** (Minimax) difficulty levels.
+A terminal-based Python 3 Tic-Tac-Toe game with two-player mode, random Easy AI, and minimax Hard AI. This is a **post-submission learning revision**, not a replacement for the original submission.
 
-## Features
-- **Strict Separation of Concerns:** Game rules, board logic, and AI strategies are completely decoupled from terminal input/output (`print()` / `input()`)[cite: 36].
-- **Object-Oriented Design:** Encapsulated `Board` state with a read-only size property, and an abstract base class (`AIPlayer`) implemented using Python's `abc` module[cite: 18, 27].
-- **Minimax AI:** `HardAI` utilizes the minimax algorithm and never loses when playing second on a 3x3 board[cite: 9, 28].
-- **Test-Driven Development:** Comprehensive test coverage via `pytest` with seeded randomness and parameterized tests[cite: 76, 81, 82].
-- **Automated CI Pipeline:** GitHub Actions continuous integration workflow verifying automated tests on every push and pull request[cite: 42].
+## Requirements
 
----
+Python 3.10 or later.
 
-## How to Run the Game
+## Run locally
 
-1. **Clone the repository and navigate to the project root:**
-   ```bash
-   git clone <your-repository-url>
-   cd tic-tac-toe
+Create and activate a virtual environment:
 
-2. **Set up and activate your virtual environment:**
-    python3 -m venv venv
-    source venv/bin/activate
-3. **Install dependencies:**
-    pip install -r requirements.txt
-4. **Launch the game:**
-    python3 main.py
+```bash
+python -m venv .venv
+```
 
-**How to Play:**
-Choose your game mode from the startup menu (Two Players, Easy AI, or Hard AI).
-Enter your moves as row and column numbers separated by a space (e.g., 2 3), indexed from 1[cite: 10].
+On Windows PowerShell: `.venv\Scripts\Activate.ps1`  
+On macOS/Linux: `source .venv/bin/activate`
 
-**How to Run the Tests**
-Make sure your virtual environment is active, then run pytest:   
-    pytest -v
+Install dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Start the game:
+
+```bash
+python main.py
+```
+
+Enter a mode of 1 (two players), 2 (easy computer), or 3 (hard computer). Moves are row and column numbers from 1 to 3, e.g. `2 3`. Invalid moves do not use up a turn.
+
+## Run tests
+
+```bash
+python -m pytest -v
+```
+
+Tests cover the board, invalid turn handling, seeded Easy AI, Hard AI decision-making, state preservation, and an exhaustive game-tree check that the Hard AI does not lose when playing second.
+
+## Architecture
+
+- `board.py`: grid state and rules
+- `ai.py`: abstract AI interface, EasyAI, HardAI with minimax
+- `game.py`: turns and game outcomes
+- `main.py`: terminal input/output
+- `tests/`: pytest tests
