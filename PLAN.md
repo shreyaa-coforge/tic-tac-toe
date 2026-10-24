@@ -39,9 +39,4 @@ This is a Tic-Tac-Toe game in Python that runs on Terminal. It allows the player
 - **Implementation Alignment:** The final implementation strictly followed the modular architecture outlined in the plan, separating concerns across `board.py`, `ai.py`, `game.py`, and `main.py`.
 - **AI Polymorphism:** Utilized Python's `abc` module to establish an abstract `AIPlayer` interface, allowing `EasyAI` and `HardAI` to be swapped seamlessly into the game logic without conditional checking.
 - **Testing Enhancements:** Added comprehensive parameterized `pytest` fixtures and seeded random generators to thoroughly validate edge cases, off-board inputs, win/draw states, and minimax optimality without relying on unseeded randomness or real time.
-## Post-submission learning changes
-- Added reverse-diagonal, turn-handling, and exhaustive second-player Hard AI tests.
-- Compared full board state around AI move selection instead of only counting empty cells.
-- Removed unused `Board.copy()` helper and stray citation markers.
-- Added menu validation and made HardAI retain the injected RNG object (move ties remain deterministic).
-- Corrected the README instructions and aligned the plan with actual tests.
+
